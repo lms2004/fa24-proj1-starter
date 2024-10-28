@@ -97,39 +97,370 @@ bool test_is_vowel() {
 /* Task 4.1 */
 
 bool test_is_tail() {
-  // TODO: Implement this function.
-  return true;
+    // 测试用例
+    char testcase_1 = 's'; // 预期 true
+    char testcase_2 = 'w'; // 预期 true
+    char testcase_3 = 'a'; // 预期 true
+    char testcase_4 = 'd'; // 预期 true
+    char testcase_5 = 'x'; // 预期 false
+    char testcase_6 = 'z'; // 预期 false
+    char testcase_7 = '1'; // 预期 false
+    char testcase_8 = ' '; // 预期 false
+
+    // 测试用例 1
+    if (!assert_true("testcase_1 should be true", is_tail(testcase_1))) {
+        return false;
+    }
+
+    // 测试用例 2
+    if (!assert_true("testcase_2 should be true", is_tail(testcase_2))) {
+        return false;
+    }
+
+    // 测试用例 3
+    if (!assert_true("testcase_3 should be true", is_tail(testcase_3))) {
+        return false;
+    }
+
+    // 测试用例 4
+    if (!assert_true("testcase_4 should be true", is_tail(testcase_4))) {
+        return false;
+    }
+
+    // 测试用例 5
+    if (!assert_false("testcase_5 should be false", is_tail(testcase_5))) {
+        return false;
+    }
+
+    // 测试用例 6
+    if (!assert_false("testcase_6 should be false", is_tail(testcase_6))) {
+        return false;
+    }
+
+    // 测试用例 7
+    if (!assert_false("testcase_7 should be false", is_tail(testcase_7))) {
+        return false;
+    }
+
+    // 测试用例 8
+    if (!assert_false("testcase_8 should be false", is_tail(testcase_8))) {
+        return false;
+    }
+
+    return true;
 }
 
+
+/*
+  Returns true if c is part of the snake's head.
+  The snake consists of these characters: "WASDx"
+  Returns false otherwise.
+*/
 bool test_is_head() {
-  // TODO: Implement this function.
-  return true;
+    // 测试用例
+    char testcase_1 = 'W'; // 预期 true
+    char testcase_2 = 'A'; // 预期 true
+    char testcase_3 = 'S'; // 预期 true
+    char testcase_4 = 'D'; // 预期 true
+    char testcase_5 = 'x'; // 预期 true
+    char testcase_6 = 'w'; // 预期 false
+    char testcase_7 = 'a'; // 预期 false
+    char testcase_8 = '1'; // 预期 false
+    char testcase_9 = ' '; // 预期 false
+
+    // 测试用例 1
+    if (!assert_true("testcase_1 should be true", is_head(testcase_1))) {
+        return false;
+    }
+
+    // 测试用例 2
+    if (!assert_true("testcase_2 should be true", is_head(testcase_2))) {
+        return false;
+    }
+
+    // 测试用例 3
+    if (!assert_true("testcase_3 should be true", is_head(testcase_3))) {
+        return false;
+    }
+
+    // 测试用例 4
+    if (!assert_true("testcase_4 should be true", is_head(testcase_4))) {
+        return false;
+    }
+
+    // 测试用例 5
+    if (!assert_true("testcase_5 should be true", is_head(testcase_5))) {
+        return false;
+    }
+
+    // 测试用例 6
+    if (!assert_false("testcase_6 should be false", is_head(testcase_6))) {
+        return false;
+    }
+
+    // 测试用例 7
+    if (!assert_false("testcase_7 should be false", is_head(testcase_7))) {
+        return false;
+    }
+
+    // 测试用例 8
+    if (!assert_false("testcase_8 should be false", is_head(testcase_8))) {
+        return false;
+    }
+
+    // 测试用例 9
+    if (!assert_false("testcase_9 should be false", is_head(testcase_9))) {
+        return false;
+    }
+
+    return true;
 }
 
+
+/*
+  Returns true if c is part of the snake.
+  The snake consists of these characters: "wasd^<v>WASDx"
+*/
 bool test_is_snake() {
-  // TODO: Implement this function.
-  return true;
+    // 测试用例
+    char testcase_1 = 'w'; // 预期 true
+    char testcase_2 = 'a'; // 预期 true
+    char testcase_3 = 's'; // 预期 true
+    char testcase_4 = 'd'; // 预期 true
+    char testcase_5 = '^'; // 预期 true
+    char testcase_6 = '<'; // 预期 true
+    char testcase_7 = 'v'; // 预期 true
+    char testcase_8 = '>'; // 预期 true
+    char testcase_9 = 'W'; // 预期 true
+    char testcase_10 = 'A'; // 预期 true
+    char testcase_11 = 'S'; // 预期 true
+    char testcase_12 = 'D'; // 预期 true
+    char testcase_13 = 'x'; // 预期 true
+    char testcase_14 = 'z'; // 预期 false
+    char testcase_15 = '1'; // 预期 false
+    char testcase_16 = ' '; // 预期 false
+
+    // 测试用例 1 到 13: 应该返回 true
+    if (!assert_true("testcase_1 should be true", is_snake(testcase_1))) return false;
+    if (!assert_true("testcase_2 should be true", is_snake(testcase_2))) return false;
+    if (!assert_true("testcase_3 should be true", is_snake(testcase_3))) return false;
+    if (!assert_true("testcase_4 should be true", is_snake(testcase_4))) return false;
+    if (!assert_true("testcase_5 should be true", is_snake(testcase_5))) return false;
+    if (!assert_true("testcase_6 should be true", is_snake(testcase_6))) return false;
+    if (!assert_true("testcase_7 should be true", is_snake(testcase_7))) return false;
+    if (!assert_true("testcase_8 should be true", is_snake(testcase_8))) return false;
+    if (!assert_true("testcase_9 should be true", is_snake(testcase_9))) return false;
+    if (!assert_true("testcase_10 should be true", is_snake(testcase_10))) return false;
+    if (!assert_true("testcase_11 should be true", is_snake(testcase_11))) return false;
+    if (!assert_true("testcase_12 should be true", is_snake(testcase_12))) return false;
+    if (!assert_true("testcase_13 should be true", is_snake(testcase_13))) return false;
+
+    // 测试用例 14 到 16: 应该返回 false
+    if (!assert_false("testcase_14 should be false", is_snake(testcase_14))) return false;
+    if (!assert_false("testcase_15 should be false", is_snake(testcase_15))) return false;
+    if (!assert_false("testcase_16 should be false", is_snake(testcase_16))) return false;
+
+    return true;
 }
+
 
 bool test_body_to_tail() {
-  // TODO: Implement this function.
+ // 测试用例
+  char testcase_1 = '^'; // 预期 'w'
+  char testcase_2 = '<'; // 预期 'a'
+  char testcase_3 = 'v'; // 预期 's'
+  char testcase_4 = '>'; // 预期 'd'
+  char testcase_5 = 'x'; // 不在字符集中，预期 '?'
+  char testcase_6 = ' '; // 不在字符集中，预期 '?'
+
+  // 执行测试用例并检查返回值
+  if (body_to_tail(testcase_1) != 'w') {
+      printf("testcase_1 failed: expected 'w', got '%c'\n", body_to_tail(testcase_1));
+      return false;
+  }
+
+  if (body_to_tail(testcase_2) != 'a') {
+      printf("testcase_2 failed: expected 'a', got '%c'\n", body_to_tail(testcase_2));
+      return false;
+  }
+
+  if (body_to_tail(testcase_3) != 's') {
+      printf("testcase_3 failed: expected 's', got '%c'\n", body_to_tail(testcase_3));
+      return false;
+  }
+
+  if (body_to_tail(testcase_4) != 'd') {
+      printf("testcase_4 failed: expected 'd', got '%c'\n", body_to_tail(testcase_4));
+      return false;
+  }
+
+  if (body_to_tail(testcase_5) != '?') {
+      printf("testcase_5 failed: expected '?', got '%c'\n", body_to_tail(testcase_5));
+      return false;
+  }
+
+  if (body_to_tail(testcase_6) != '?') {
+      printf("testcase_5 failed: expected '?', got '%c'\n", body_to_tail(testcase_6));
+      return false;
+  }
+
   return true;
 }
 
 bool test_head_to_body() {
-  // TODO: Implement this function.
+// 测试用例
+  char testcase_1 = 'W'; // 预期 '^'
+  char testcase_2 = 'A'; // 预期 '<'
+  char testcase_3 = 'S'; // 预期 'v'
+  char testcase_4 = 'D'; // 预期 '>'
+  char testcase_5 = 'x'; // 不在字符集中，预期 '?'
+  char testcase_6 = ' '; // 不在字符集中，预期 '?'
+
+  // 执行测试用例并检查返回值
+  if (head_to_body(testcase_1) != '^') {
+      printf("testcase_1 failed: expected '^', got '%c'\n", head_to_body(testcase_1));
+      return false;
+  }
+
+  if (head_to_body(testcase_2) != '<') {
+      printf("testcase_2 failed: expected '<', got '%c'\n", head_to_body(testcase_2));
+      return false;
+  }
+
+  if (head_to_body(testcase_3) != 'v') {
+      printf("testcase_3 failed: expected 'v', got '%c'\n", head_to_body(testcase_3));
+      return false;
+  }
+
+  if (head_to_body(testcase_4) != '>') {
+      printf("testcase_4 failed: expected '>', got '%c'\n", head_to_body(testcase_4));
+      return false;
+  }
+
+  if (head_to_body(testcase_5) != '?') {
+      printf("testcase_5 failed: expected '?', got '%c'\n", head_to_body(testcase_5));
+      return false;
+  }
+
+  if (body_to_tail(testcase_6) != '?') {
+      printf("testcase_5 failed: expected '?', got '%c'\n", head_to_body(testcase_6));
+      return false;
+  }
   return true;
 }
+
 
 bool test_get_next_row() {
-  // TODO: Implement this function.
-  return true;
+    // 定义测试用例
+    unsigned int cur_row = 5;
+
+    // 测试 'v', 's', 'S' 的情况
+    if (get_next_row(cur_row, 'v') != cur_row + 1) {
+        printf("Testcase 'v' failed: expected %u, got %u\n", cur_row + 1, get_next_row(cur_row, 'v'));
+        return false;
+    }
+
+    if (get_next_row(cur_row, 's') != cur_row + 1) {
+        printf("Testcase 's' failed: expected %u, got %u\n", cur_row + 1, get_next_row(cur_row, 's'));
+        return false;
+    }
+
+    if (get_next_row(cur_row, 'S') != cur_row + 1) {
+        printf("Testcase 'S' failed: expected %u, got %u\n", cur_row + 1, get_next_row(cur_row, 'S'));
+        return false;
+    }
+
+    // 测试 '^', 'w', 'W' 的情况
+    if (get_next_row(cur_row, '^') != cur_row - 1) {
+        printf("Testcase '^' failed: expected %u, got %u\n", cur_row - 1, get_next_row(cur_row, '^'));
+        return false;
+    }
+
+    if (get_next_row(cur_row, 'w') != cur_row - 1) {
+        printf("Testcase 'w' failed: expected %u, got %u\n", cur_row - 1, get_next_row(cur_row, 'w'));
+        return false;
+    }
+
+    if (get_next_row(cur_row, 'W') != cur_row - 1) {
+        printf("Testcase 'W' failed: expected %u, got %u\n", cur_row - 1, get_next_row(cur_row, 'W'));
+        return false;
+    }
+
+    // 测试其他字符的情况（不应改变行号）
+    if (get_next_row(cur_row, 'x') != cur_row) {
+        printf("Testcase 'x' failed: expected %u, got %u\n", cur_row, get_next_row(cur_row, 'x'));
+        return false;
+    }
+
+    if (get_next_row(cur_row, '1') != cur_row) {
+        printf("Testcase '1' failed: expected %u, got %u\n", cur_row, get_next_row(cur_row, '1'));
+        return false;
+    }
+
+    if (get_next_row(cur_row, ' ') != cur_row) {
+        printf("Testcase ' ' failed: expected %u, got %u\n", cur_row, get_next_row(cur_row, ' '));
+        return false;
+    }
+
+    return true;
 }
 
+
 bool test_get_next_col() {
-  // TODO: Implement this function.
-  return true;
+    // 定义测试用例
+    unsigned int cur_col = 5;
+
+    // 测试 '>', 'd', 'D' 的情况
+    if (get_next_col(cur_col, '>') != cur_col + 1) {
+        printf("Testcase '>' failed: expected %u, got %u\n", cur_col + 1, get_next_col(cur_col, '>'));
+        return false;
+    }
+
+    if (get_next_col(cur_col, 'd') != cur_col + 1) {
+        printf("Testcase 'd' failed: expected %u, got %u\n", cur_col + 1, get_next_col(cur_col, 'd'));
+        return false;
+    }
+
+    if (get_next_col(cur_col, 'D') != cur_col + 1) {
+        printf("Testcase 'D' failed: expected %u, got %u\n", cur_col + 1, get_next_col(cur_col, 'D'));
+        return false;
+    }
+
+    // 测试 '<', 'a', 'A' 的情况
+    if (get_next_col(cur_col, '<') != cur_col - 1) {
+        printf("Testcase '<' failed: expected %u, got %u\n", cur_col - 1, get_next_col(cur_col, '<'));
+        return false;
+    }
+
+    if (get_next_col(cur_col, 'a') != cur_col - 1) {
+        printf("Testcase 'a' failed: expected %u, got %u\n", cur_col - 1, get_next_col(cur_col, 'a'));
+        return false;
+    }
+
+    if (get_next_col(cur_col, 'A') != cur_col - 1) {
+        printf("Testcase 'A' failed: expected %u, got %u\n", cur_col - 1, get_next_col(cur_col, 'A'));
+        return false;
+    }
+
+    // 测试其他字符的情况（不应改变列号）
+    if (get_next_col(cur_col, 'x') != cur_col) {
+        printf("Testcase 'x' failed: expected %u, got %u\n", cur_col, get_next_col(cur_col, 'x'));
+        return false;
+    }
+
+    if (get_next_col(cur_col, '1') != cur_col) {
+        printf("Testcase '1' failed: expected %u, got %u\n", cur_col, get_next_col(cur_col, '1'));
+        return false;
+    }
+
+    if (get_next_col(cur_col, ' ') != cur_col) {
+        printf("Testcase ' ' failed: expected %u, got %u\n", cur_col, get_next_col(cur_col, ' '));
+        return false;
+    }
+
+    return true;
 }
+
 
 bool test_customs() {
   if (!test_greater_than_forty_two()) {

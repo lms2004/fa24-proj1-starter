@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "asserts.h": "c",
+        "__locale": "c"
+    }
+}
