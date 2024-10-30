@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "asserts.h": "c",
-        "__locale": "c"
+        "__locale": "c",
+        "random": "c",
+        "queue": "c",
+        "locale": "c"
     }
 }
